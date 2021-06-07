@@ -303,8 +303,8 @@ labels = credit_cards['Class']
 features_train, features_test, labels_train, labels_test = train_test_split(features, labels, test_size=0.2, random_state=0)
 
 oversampler = SMOTE(random_state=0)
-os_features, os_labels = oversampler.fit_sample(features_train, labels_train)
-
+# os_features, os_labels = oversampler.fit_sample(features_train, labels_train)
+os_features, os_labels = oversampler.fit_resample(features_train, labels_train)
 print(len(os_labels[os_labels == 1]))
 
 print("---------------------------------------------------------------------------")
